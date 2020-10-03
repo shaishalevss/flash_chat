@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
@@ -18,6 +19,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   void initState() {
     super.initState();
+    Firebase.initializeApp();
     controller = AnimationController(
       duration: Duration(seconds: 1),
       vsync: this,
