@@ -2,20 +2,18 @@ import 'package:flutter/material.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'file:///D:/Users/FLUTTERSTUFF/flash_chat/lib/components/rounded_button.dart';
+import 'package:flash_chat/components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
   static const String id = 'welcome';
-
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin {
-
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
   AnimationController controller;
   Animation animationForLogo;
-
 
   @override
   void initState() {
@@ -30,11 +28,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
     );
     controller.forward();
     controller.addListener(() {
-      setState(() {
-      });
+      setState(() {});
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -68,13 +64,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
               height: 48.0,
             ),
             RoundedButton(
-              onPressed: (){Navigator.pushNamed(context, LoginScreen.id);},
-            title: 'Log in',
-            colour: Colors.redAccent,),
+              onPressed: () {
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
+              title: 'Log in',
+              colour: Colors.redAccent,
+            ),
             RoundedButton(
-              onPressed: (){Navigator.pushNamed(context, RegistrationScreen.id);},
+              onPressed: () {
+                Navigator.pushNamed(context, RegistrationScreen.id);
+              },
               title: 'Register',
-              colour: Colors.lightBlue,),
+              colour: Colors.lightBlue,
+            ),
           ],
         ),
       ),
